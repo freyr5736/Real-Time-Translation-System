@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define the character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Viewport settings for responsive design, adjusting to different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Translation</title>
+    
+    <!-- Link to Google Fonts to use the Inter font in the application -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Link to the external stylesheet for custom styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Main container for the translation application -->
+    <div class="translate-container">
+        <!-- Language selection area -->
+        <div class="language-selector">
+            <div class="select-container">
+                <!-- Dropdown for selecting input language with an option to auto-detect -->
+                <select id="input-language-select" class="language-select">
+                    <option value="auto">Detect Language</option>
+                    <!-- Loop through available languages and create an option for each -->
+                    {% for lang_code, lang_name in languages.items() %}
+                        <option value="{{ lang_code }}">{{ lang_name.capitalize() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <!-- Button to swap input and output languages -->
+            <button id="swap-btn" class="swap-button">⇅</button>
+            <div class="select-container">
+                <!-- Dropdown for selecting output language -->
+                <select id="output-language-select" class="language-select">
+                    <!-- Loop through available languages and create an option for each -->
+                    {% for lang_code, lang_name in languages.items() %}
+                        <option value="{{ lang_code }}">{{ lang_name.capitalize() }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <!-- Text input and output area -->
+        <div class="text-boxes">
+            <div class="input-box">
+                <!-- Textarea for user to input text to be translated -->
+                <textarea id="text-input" placeholder="Type to translate..."></textarea>
+                <!-- Button to initiate speech recognition for input -->
+                <button id="mic-btn" class="icon-btn">🎤</button>
+            </div>
+            <div class="output-box">
+                <!-- Textarea to display the translated text; set as read-only -->
+                <textarea id="translated-text" placeholder="Translation will appear here..." readonly></textarea>
+                <!-- Button to play the translated text as speech -->
+                <button id="speaker-btn" class="icon-btn">🔊</button> <!-- Updated ID to match JavaScript -->
+            </div>
+        </div>
+
+        <!-- Button to reset the translation input and output -->
+        <button id="reset-btn" class="reset-button">Reset</button>
+    </div>
+
+    <!-- Link to the external JavaScript file for functionality -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

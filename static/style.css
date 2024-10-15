@@ -1,0 +1,116 @@
+/* General body styles */
+body {
+    font-family: 'Inter', sans-serif; /* Set the font family to 'Inter' with a fallback to sans-serif */
+    background-color: #121212; /* Dark background color for the body */
+    color: #ffffff; /* White text color for better contrast */
+}
+
+/* Container for the translator */
+.translate-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Center child elements horizontally */
+    margin-top: 50px; /* Space above the container */
+}
+
+/* Language selector dropdowns */
+.language-selector {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center child elements horizontally */
+    align-items: center; /* Center child elements vertically */
+    margin-bottom: 20px; /* Space below the language selector */
+}
+
+/* Container for the dropdowns */
+.select-container {
+    margin: 0 10px; /* Space on the left and right of each dropdown */
+}
+
+/* Styling for language select dropdowns */
+.language-select {
+    background-color: #333; /* Dark background for the dropdown */
+    color: #fff; /* White text color for better readability */
+    padding: 10px; /* Space inside the dropdown */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* No border */
+}
+
+/* Styling for the swap button with rotation */
+.swap-button {
+    background-color: #444; /* Darker background for the button */
+    color: #fff; /* White text color */
+    padding: 10px 15px; /* Space inside the button */
+    border: none; /* No border */
+    cursor: pointer; /* Change cursor to pointer when hovered */
+    border-radius: 5px; /* Rounded corners */
+    transform: rotate(90deg);  /* Rotate button 90 degrees */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+/* Text areas container */
+.text-boxes {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out the text areas */
+    width: 80%; /* Set width of the container */
+}
+
+/* Input and output text areas */
+.input-box, .output-box {
+    flex: 1; /* Allow boxes to grow and take equal space */
+    margin: 0 10px; /* Space on the left and right */
+    position: relative; /* Position relative for absolute children */
+}
+
+/* Styling for the textarea input fields */
+textarea {
+    width: 100%; /* Full width of the container */
+    height: 150px; /* Fixed height for the text area */
+    background-color: #1e1e1e; /* Dark background for text area */
+    color: #fff; /* White text color for better readability */
+    border: 1px solid #333; /* Dark border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Space inside the textarea */
+    resize: none; /* Disable resizing */
+    font-size: 18px; /* Larger font size for easier reading */
+}
+
+/* Styling for read-only text areas */
+textarea[readonly] {
+    background-color: #333; /* Dark background for read-only text area */
+}
+
+/* Microphone and speaker buttons */
+.icon-btn {
+    position: absolute; /* Position absolute for precise placement */
+    bottom: 10px; /* Position 10px from the bottom */
+    right: 10px; /* Position 10px from the right */
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    color: #fff; /* White icon color */
+    cursor: pointer; /* Change cursor to pointer when hovered */
+    font-size: 24px; /* Larger font size for better visibility */
+}
+
+/* When the mic button is active (listening) */
+#mic-btn.active {
+    background-color: #0066ff; /* Change background color to blue when active */
+    color: #fff; /* White icon color */
+}
+
+/* When the volume button is active (speaking) */
+#volume-btn.active {
+    background-color: #ffcc00; /* Change background color to yellow when active */
+    color: #fff; /* White icon color */
+}
+
+/* Reset button */
+.reset-button {
+    margin-top: 20px; /* Space above the reset button */
+    padding: 10px 20px; /* Space inside the button */
+    background-color: #ff4d4d; /* Red background color */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    cursor: pointer; /* Change cursor to pointer when hovered */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Larger font size for better visibility */
+}
